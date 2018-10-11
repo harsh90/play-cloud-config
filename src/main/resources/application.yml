@@ -1,0 +1,10 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: playground-configserver
+  cloud:
+   config:
+     server:
+       git:
+         uri: https://github.com/harsh90/playgroud-config-repository.git
