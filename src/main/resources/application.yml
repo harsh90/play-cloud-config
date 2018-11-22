@@ -1,10 +1,33 @@
-server:
-  port: 8888
 spring:
+  boot:
+    admin:
+      client:
+        url: https://demosb-admin-server.herokuapp.com
+        instance:
+          service-url: https://springcloudconfig-play.herokuapp.com
+          metadata:
+            user:
+              name: harshitha
+              password: my-secret-password
+        username: harshitha
+        password: 1qaz2wsx@
+  security:
+    user:
+      name: harshitha
+      password: my-secret-password
   application:
     name: playground-configserver
   cloud:
-   config:
-     server:
-       git:
-         uri: https://github.com/harsh90/playgroud-config-repository.git
+    config:
+      server:
+        git:
+          uri: https://github.com/harsh90/playgroud-config-repository.git
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+  endpoint:
+    health:
+      show-details: always
